@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { EliteApi } from '../../providers/elite-api/elite-api';
 import * as _ from 'lodash';
+import { GamePage } from '../game/game';
 
 @Component({
   selector: 'page-team-detail',
@@ -49,6 +50,13 @@ export class TeamDetailPage {
       }else{
         return "";
       }
+  }
+
+
+
+  gameClicked($event, game){
+    let sourceGame = this.tourneyData.games.find(g => g.id === game.gameId);
+    this.navCtrl.parent.parent.push(GamePage , sourceGame);
   }
 
 }

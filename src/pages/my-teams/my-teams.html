@@ -13,7 +13,7 @@
 
 <ion-content>
 
-    <ion-card>
+    <ion-card *ngIf="!favorites">
         <ion-card-header>No Followed Teams</ion-card-header>
         <ion-card-content>
             <p>You are not current following any Team</p>
@@ -28,7 +28,7 @@
     </ion-card>
 
 
-    <ion-card>
+    <ion-card *ngIf="favorites">
         <ion-list>
             <ion-list-header>Followed Teams</ion-list-header>
 
